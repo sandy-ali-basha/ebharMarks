@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "HT Rakik Display";
+  src: url("../fonts/HTRakikDisplay-Bold.eot");
+  src: url("../fonts/HTRakikDisplay-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/HTRakikDisplay-Bold.woff2") format("woff2"),
+    url("../fonts/HTRakikDisplay-Bold.woff") format("woff"),
+    url("../fonts/HTRakikDisplay-Bold.ttf") format("truetype"),
+    url("../fonts/HTRakikDisplay-Bold.svg#HTRakikDisplay-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HT Rakik Display";
+  src: url("../fonts/HTRakikDisplay-Regular.eot");
+  src: url("../fonts/HTRakikDisplay-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/HTRakikDisplay-Regular.woff2") format("woff2"),
+    url("../fonts/HTRakikDisplay-Regular.woff") format("woff"),
+    url("../fonts/HTRakikDisplay-Regular.ttf") format("truetype"),
+    url("../fonts/HTRakikDisplay-Regular.svg#HTRakikDisplay-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
