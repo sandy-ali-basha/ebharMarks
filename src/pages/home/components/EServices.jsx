@@ -10,6 +10,8 @@ import ships from "../../../assets/images/icons/ships.svg";
 import yacht from "../../../assets/images/icons/yacht.svg";
 import EServicesTitle from "../../../assets/images/E-services.svg";
 
+import { Link } from "react-router-dom";
+
 function EServices() {
   const items = [
     { icon: building, text: "Cruise Organizer License" },
@@ -29,10 +31,12 @@ function EServices() {
         <img src={EServicesTitle} alt="" />
         <div className="E_services">
           {items.map((item, index) => (
-            <div key={index} className="Card">
-              <img src={item.icon} alt="" />
-              <p>{item.text}</p>
-            </div>
+            <Link to="/login" key={index}>
+              <div className="Card">
+                <img src={item.icon} alt="" />
+                <p>{item.text}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

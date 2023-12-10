@@ -50,7 +50,7 @@ function News() {
           dir="rtl"
         >
           {SlidesContent.map((item, index) => (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               {" "}
               <article className="slide">
                 <h4>{item.title}</h4>

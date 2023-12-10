@@ -8,8 +8,6 @@ import Instagram from "../../assets/images/instagram.svg";
 import Twitter from "../../assets/images/twitter.svg";
 
 const Footer = () => {
-  const { t } = useTranslation();
-
   return (
     <section className="pb-10 w-full absolute bottom-0 z-10">
       <div className=" mx-auto footerDiv">
@@ -27,7 +25,7 @@ const Footer = () => {
             <p className="px-2">All rights reserved to Ebhar 2023</p>
           </ul>
           <div className="flex-shrink-1 flex items-center">
-            <Link href="/" title="" className="pe-5">
+            {/* <Link href="/" title="" className="pe-5">
               <p>Terms of Use</p>
             </Link>
             <Link href="/" title="" className="pe-5">
@@ -35,7 +33,7 @@ const Footer = () => {
             </Link>
             <Link href="/" title="" className="pe-5">
               <p>Legal Notice</p>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

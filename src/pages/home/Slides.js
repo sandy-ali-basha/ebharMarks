@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { dataStore } from '../../store/dataStore';
+import { useParams } from 'react-router-dom';
 
 function Slides({ children }) {
     const [active, setActive] = useState(0);
+    const [display, setDisplay] = dataStore((state) => [
+        state.display,
+        state.setDisplay,
+    ]);
 
     // Add event listener for wheel event
     useEffect(() => {
         const handleScroll = (e) => {
-            if (e.deltaY < 0 && active > 0) {
-                setActive(active - 1);
-            } else if (e.deltaY > 0 && active < children.length - 1) {
-                setActive(active + 1);
+            if (!display) {
+                if (e.deltaY < 0 && active > 0) {
+                    setActive(active - 1);
+                } else if (e.deltaY > 0 && active < children.length - 1) {
+                    setActive(active + 1);
+                }
             }
         };
 
@@ -19,7 +27,7 @@ function Slides({ children }) {
         return () => {
             window.removeEventListener('wheel', handleScroll);
         };
-    }, [active, children.length]);
+    }, [active, children.length, display]);
 
     return (
         <div className='bg'>
@@ -52,6 +60,7 @@ function Slides({ children }) {
                                 (index === children.length - 1 ? "translateY(-30px)" : index === 0 && "translateY(30px)")
                                 : (index <= active ? "translateY(-5vh)" : "translateY(5vh)"),
                         }}
+                        key={index}
                     >
                         <button onClick={() => setActive(index)}>
                             {child.props.title} {/* Display the slide name */}

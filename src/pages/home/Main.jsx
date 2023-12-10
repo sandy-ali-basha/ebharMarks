@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import Slides from "./Slides";
 
 import Start from "./components/Start";
