@@ -2,6 +2,7 @@
 * {
   font-family: "HT Rakik Display";
 }
+
 body {
   margin: 0;
   overflow: hidden;
@@ -14,7 +15,13 @@ body {
   transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
 }
-
+.bg {
+  background: linear-gradient(
+    180deg,
+    rgba(16, 133, 157, 0.8) 0%,
+    rgba(15, 35, 40, 0.8) 81.51%
+  );
+}
 .slide {
   display: flex;
   height: 100vh;
@@ -23,11 +30,7 @@ body {
   align-items: center;
   background-size: cover;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(16, 133, 157, 0.8) 0%,
-    rgba(15, 35, 40, 0.8) 81.51%
-  );
+
   .content {
     position: absolute;
     top: 0px;
@@ -102,7 +105,7 @@ body {
   align-items: flex-end;
   transition: all 2s ease-in-out;
   overflow: hidden;
-
+  z-index: 555;
   &::before {
     font-size: 26px;
     content: " ";
@@ -200,9 +203,10 @@ body {
   }
 }
 .E_services_content {
-  width: 68%;
-  margin: 6vw;
-  height: 65%;
+  width: 70vw;
+  height: 80vh;
+  margin-left: 6vw;
+  padding-top: 20vh;
   overflow-y: scroll;
   -ms-overflow-style: none; /* hide the scrollbar for IE and Edge */
   scrollbar-width: none; /* hide the scrollbar for Firefox */
@@ -248,11 +252,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  min-height: 85vh;
   img {
-    width: 40%;
+    width: 50%;
     position: absolute;
-    top: -10%;
-    z-index: -1;
+    top: 7vh;
+    transform: rotate(25deg);
   }
   .text {
     top: -5vh;
@@ -268,5 +273,91 @@ body {
       width: 75%;
       text-align: justify;
     }
+  }
+}
+
+.News {
+  padding-top: 20vh;
+  .NewsSwiper {
+    height: 70vh;
+    width: 80vw;
+    margin: auto 0px;
+    transform: translateX(-10vw);
+    .slide {
+      height: 80%;
+      border-radius: 0.375rem;
+      background: #fff;
+      box-shadow: 0px 4px 24px 0px rgba(57, 151, 151, 0.4);
+      padding: 2rem;
+      gap: 0.8rem;
+      flex-direction: column;
+      h4 {
+        color: #0f2328;
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      p {
+        color: #646464;
+        font-size: 1.05rem;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      top: 90%;
+      &::after {
+        font-size: 1.5rem;
+        filter: grayscale(1) brightness(2);
+      }
+    }
+    .swiper-button-prev {
+      right: auto;
+      left: 20vw;
+    }
+    .swiper-button-next {
+      left: 15vw;
+    }
+  }
+}
+.Partners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 0vw 5vw;
+  padding-top: 20vh;
+  gap: 1rem;
+  .img {
+    // border: 1px solid red;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 15vh;
+    justify-content: center;
+    img {
+      height: 100%;
+    }
+  }
+}
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  margin: 1vw;
+  position: absolute;
+  z-index: 9999;
+  top: 0px;
+  .xIcon {
+    margin-block: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  .dialogContent {
+    background-color: white;
+    border-radius: 5px;
+    width: 98vw;
+    height: 90vh;
   }
 }

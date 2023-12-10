@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import videoBg from "../../../assets/videos/background.mp4";
+import React from "react";
 import building from "../../../assets/images/icons/building.svg";
 import chartering from "../../../assets/images/icons/chartering.svg";
 import gruise from "../../../assets/images/icons/gruise.svg";
@@ -12,14 +11,6 @@ import yacht from "../../../assets/images/icons/yacht.svg";
 import EServicesTitle from "../../../assets/images/E-services.svg";
 
 function EServices() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      // videoRef.current.play();
-    }
-  }, []);
-
   const items = [
     { icon: building, text: "Cruise Organizer License" },
     { icon: chartering, text: "Tourist Marina Operator License" },
@@ -34,10 +25,7 @@ function EServices() {
 
   return (
     <>
-      <video muted loop playsInline ref={videoRef} className="bgVed">
-        <source src={videoBg} type="video/webm" />
-      </video>
-      <div className="E_services_content">
+      <div className="E_services_content animate__animated animate__fadeIn">
         <img src={EServicesTitle} alt="" />
         <div className="E_services">
           {items.map((item, index) => (

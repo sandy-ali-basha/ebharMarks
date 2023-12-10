@@ -1,27 +1,16 @@
-import React, { useEffect, useRef } from "react";
-import videoBg from "../../../assets/videos/background.mp4";
-
+import React from "react";
 function Start() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  }, []);
-
   return (
-    <>
-      <video muted loop controls ref={videoRef} className="bgVed">
-        <source src={videoBg} type="video/mp4" />
-      </video>
-      <div className="content">
-        <div className="start">
-          <h1>The leader of a thriving</h1>
-          <p>sustainable & innovative coastal tourism ecosystem</p>
-        </div>
+    <div className="content position-absolute">
+      <div className="start">
+        <h1 className="animate__animated animate__fadeInUp">
+          The leader of a thriving
+        </h1>
+        <p className="animate__animated animate__fadeInUp animate__delay-2s">
+          sustainable & innovative coastal tourism ecosystem
+        </p>
       </div>
-    </>
+    </div>
   );
 }
 

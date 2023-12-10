@@ -1,22 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import videoBg from "../../../assets/videos/background.mp4";
+import React, { useState } from "react";
 import img from "../../../assets/images/EBHAR.svg";
 
 function AboutUs() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      //   videoRef.current.play();
-    }
-  }, []);
+  const [display, setDisplay] = useState(false);
 
   return (
     <>
-      <video muted loop playsInline ref={videoRef} className="bgVed">
-        <source src={videoBg} type="video/webm" />
-      </video>
-      <div className="AboutUsContent content">
+      <div className="AboutUsContent content animate__animated animate__fadeIn">
         <div className="AboutUs">
           <h2>
             <img src={img} alt="logo" />
@@ -28,8 +18,19 @@ function AboutUs() {
             increasingincreasing the number of letters that the application
             generates.
           </p>
-          <button>Read More</button>
+          <button onClick={() => setDisplay(!display)}>Read More</button>
         </div>
+      </div>
+      <div
+        className={`dialog animate__animated ${
+          display ? "animate__fadeInUp" : "animate__fadeOutUp"
+        }`}
+        style={{ display: display ? "block" : "none" }}
+      >
+        <div className="xIcon" onClick={() => setDisplay(!display)}>
+          x
+        </div>
+        <div className="dialogContent"></div>
       </div>
     </>
   );

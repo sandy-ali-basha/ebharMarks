@@ -3,31 +3,30 @@ import React, { useState } from 'react';
 function Slides({ children }) {
     const [active, setActive] = useState(0);
 
-    const goPrev = () => {
-        if (active > 0) {
-            setActive(active - 1);
-        }
-    };
-
-    const goNext = () => {
-        if (active < children.length - 1) {
-            setActive(active + 1);
-        }
-    };
-
-    const percentage = -100 * active + '%';
-
+    // const percentage = 100 * active + '%';
+    const percentage = 1 * active;
+    console.log("active", active)
     return (
-        <div>
-            <div className="slides" style={{ transform: `translate3d(0, ${percentage}, 0)` }}>
+        <div className='bg'>
+            <div
+                className="slides"
+            >
                 {children.map((child, index) => {
                     if (index === active) {
                         return React.cloneElement(
                             child,
-                            { className: child.props.className + ' active' }
+                            {
+                                className: child.props.className + ' active',
+                                style: { ...child.props.style, display: 'block' }
+                            }
                         );
                     }
-                    return child;
+                    return React.cloneElement(
+                        child,
+                        {
+                            style: { ...child.props.style, display: 'none' }
+                        }
+                    );
                 })}
             </div>
 
@@ -37,7 +36,8 @@ function Slides({ children }) {
                         className={`${index === active ? 'active' : ''}`}
                         style={{
                             transform: index === active ?
-                                (index === children.length - 1 ? "translateY(-30px)" : index === 0 && "translateY(30px)") : (index <= active ? "translateY(-5vh)" : "translateY(5vh)")
+                                (index === children.length - 1 ? "translateY(-30px)" : index === 0 && "translateY(30px)")
+                                : (index <= active ? "translateY(-5vh)" : "translateY(5vh)"),
                         }}
                     >
                         <button onClick={() => setActive(index)}>

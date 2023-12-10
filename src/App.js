@@ -1,5 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
 
 // Pages
 import Main from "./pages/home";
