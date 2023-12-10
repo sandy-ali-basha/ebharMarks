@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Slides({ children }) {
     const [active, setActive] = useState(0);
 
+    // Add event listener for wheel event
+    useEffect(() => {
+        const handleScroll = (e) => {
+            if (e.deltaY < 0 && active > 0) {
+                setActive(active - 1);
+            } else if (e.deltaY > 0 && active < children.length - 1) {
+                setActive(active + 1);
+            }
+        };
+
+        window.addEventListener('wheel', handleScroll);
+
+        // Clean up event listener on unmount
+        return () => {
+            window.removeEventListener('wheel', handleScroll);
+        };
+    }, [active, children.length]);
+
     return (
         <div className='bg'>
-            <div
-                className="slides"
-            >
+            <div className="slides">
                 {children.map((child, index) => {
                     if (index === active) {
                         return React.cloneElement(
@@ -42,7 +58,6 @@ function Slides({ children }) {
                         </button>
                     </li>
                 ))}
-
             </ul >
         </div >
     );
