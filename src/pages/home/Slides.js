@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 function Slides({ children }) {
     const [active, setActive] = useState(0);
 
-    // const percentage = 100 * active + '%';
-    const percentage = 1 * active;
-    console.log("active", active)
     return (
         <div className='bg'>
             <div

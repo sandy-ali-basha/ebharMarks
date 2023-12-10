@@ -12,7 +12,7 @@ function Header() {
       className="absolute w-full top-0 z-10 py-10"
       x-data="{expanded: false}"
     >
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className=" mx-auto footerDiv">
         <div className="flex items-center justify-between text-white">
           <ul className="flex-shrink-0 flex items-center ">
             <Link href="/" title="" className="px-2 pe-5">

@@ -11,7 +11,6 @@ import Partners from "./components/Partners";
 import videoBg from "../../assets/videos/background.mp4";
 
 export const Main = () => {
-  const { t } = useTranslation();
   const videoRef = useRef(null);
 
   useEffect(() => {

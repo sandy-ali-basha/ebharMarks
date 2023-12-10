@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <section className="pb-10 w-full absolute bottom-0 z-10">
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+      <div className=" mx-auto footerDiv">
         <div className="flex items-center justify-between text-white">
           <ul className="flex-shrink-0 flex items-center ">
             <Link href="/" title="" className="px-2 pe-5">
