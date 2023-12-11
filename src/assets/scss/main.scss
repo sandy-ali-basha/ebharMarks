@@ -126,9 +126,9 @@ html {
     right: 0px;
     width: 10px;
     position: absolute;
-    height: 60%;
+    height: 40vh;
     background-position: center center;
-    top: 60px;
+    transform: translateY(-6px);
   }
 
   li {
