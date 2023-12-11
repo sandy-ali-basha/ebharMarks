@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 import Logo from "../../assets/images/ebhar-logo.svg";
 // import globe from "../../assets/images/globe.svg";
-// import person from "../../assets/images/person.svg";
-// import search from "../../assets/images/searsh.svg";
+import person from "../../assets/images/person.svg";
+import search from "../../assets/images/searsh.svg";
 
 function Header() {
   return (
@@ -37,10 +37,10 @@ function Header() {
           <div className="flex-shrink-1 flex items-center">
             {/* <Link to="/" title="" className="pe-5">
               <p>Interactive Map </p>
-            </Link>
-            <Link to="/" title="" className="px-2">
+            </Link> */}
+            {/* <Link to="/" title="" className="px-2">
               <img src={globe} alt="" />
-            </Link>
+            </Link> */}
 
             <Link to="/" title="" className="px-2">
               <img src={person} alt="" />
@@ -48,7 +48,7 @@ function Header() {
 
             <Link to="/" title="" className="px-2">
               <img src={search} alt="" />
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
