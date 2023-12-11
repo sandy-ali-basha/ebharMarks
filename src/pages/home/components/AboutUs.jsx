@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import img from "../../../assets/images/EBHAR.svg";
 import Xicon from "../../../assets/images/icons/xIxcon.svg";
 import Vector from "../../../assets/images/icons/Vector.svg";

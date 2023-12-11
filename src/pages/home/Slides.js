@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { dataStore } from '../../store/dataStore';
-import { useParams } from 'react-router-dom';
+import { e_Services } from '../../store/e_Services';
 
 function Slides({ children }) {
-    const [active, setActive] = useState(0);
+    // const [active, setActive] = useState(0);
     const [display, setDisplay] = dataStore((state) => [
         state.display,
         state.setDisplay,
     ]);
+
+    const [active, setActive] = e_Services((state) => [state.show, state.setShow]);
 
     // Add event listener for wheel event
     useEffect(() => {

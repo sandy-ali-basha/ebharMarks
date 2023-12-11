@@ -5,8 +5,11 @@ import Logo from "../../assets/images/ebhar-logo.svg";
 // import globe from "../../assets/images/globe.svg";
 import person from "../../assets/images/person.svg";
 import search from "../../assets/images/searsh.svg";
+import { e_Services } from "../../store/e_Services";
 
 function Header() {
+  const [show, setShow] = e_Services((state) => [state.show, state.setShow]);
+
   return (
     <header
       className="absolute w-full top-0 z-10 py-10"
@@ -18,10 +21,23 @@ function Header() {
             <Link to="/" title="" className="px-2 pe-5">
               <img className="" src={Logo} alt="" />
             </Link>
-            <Link to="/" title="" className="px-2 home">
+            <Link
+              to="/"
+              onClick={() => {
+                setShow(0);
+              }}
+              title=""
+              className={`px-2 ${show === 0 ? "activeHeder" : ""}`}
+            >
               <p>HOME</p>
             </Link>
-            <Link to="/" title="" className="px-2 ">
+            <Link
+              onClick={() => {
+                setShow(2);
+              }}
+              title=""
+              className={`px-2 ${show === 2 ? "activeHeder" : ""}`}
+            >
               <p>E-services</p>
             </Link>
             {/* <Link to="/" title="" className="px-2">
