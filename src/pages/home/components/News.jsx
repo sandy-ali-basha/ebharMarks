@@ -41,7 +41,6 @@ function News() {
           navigation={true}
           modules={[Navigation]}
           className="NewsSwiper"
-          slidesPerView={2}
           spaceBetween={40}
           pagination={{
             clickable: true,
@@ -50,11 +49,10 @@ function News() {
           dir="rtl"
           breakpoints={{
             // when window width is >= 640px
-
             10: {
               slidesPerView: 2,
             },
-            640: {
+            990: {
               slidesPerView: 3,
             },
           }}
