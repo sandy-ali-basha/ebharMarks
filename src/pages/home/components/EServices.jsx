@@ -26,7 +26,7 @@ function EServices() {
   ];
 
   return (
-    <>
+    <div className="E_services_container">
       <div className="E_services_content animate__animated animate__fadeIn">
         <img src={EServicesTitle} alt="" />
         <div className="E_services">
@@ -40,7 +40,7 @@ function EServices() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

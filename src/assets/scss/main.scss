@@ -1,4 +1,5 @@
-@import "fonts.scss";
+@import "fonts.scss", "./_breakpoints";
+
 * {
   font-family: "HT Rakik Display";
 }
@@ -59,12 +60,28 @@ html {
   width: 100vw;
   height: 85vh;
   padding: 2rem 5rem;
+  @media only screen and (max-width: 600px) {
+    padding: 2rem;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
   h1 {
     font-size: 4.75rem;
     font-weight: 700;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.5rem;
+      text-align: center;
+      width: 100%;
+    }
   }
   p {
     font-size: 2.5rem;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.2rem;
+      text-align: center;
+      width: 80%;
+    }
   }
 }
 .slide::before {
@@ -102,7 +119,7 @@ html {
   }
 }
 .activeHeder {
-  color: #b01e41;
+  color: #b01e41 !important;
 }
 .dots {
   margin: 0;
@@ -119,6 +136,9 @@ html {
   transition: all 2s ease-in-out;
   overflow: hidden;
   z-index: 555;
+  @media only screen and (max-width: 600px) {
+    top: 55%;
+  }
   &::before {
     font-size: 26px;
     content: " ";
@@ -129,6 +149,9 @@ html {
     height: 40vh;
     background-position: center center;
     transform: translateY(-6px);
+    @media only screen and (max-width: 600px) {
+      height: 30vh;
+    }
   }
 
   li {
@@ -185,6 +208,10 @@ html {
   width: 100%;
   padding: 0 0 0 6vw;
   justify-content: start !important;
+  @media only screen and (max-width: 600px) {
+    justify-content: center !important;
+    padding: 2rem;
+  }
 }
 
 .AboutUs {
@@ -195,6 +222,13 @@ html {
   justify-content: flex-end;
   height: 60vh;
   width: 70vw;
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+    height: 80vh;
+    align-items: center;
+    padding-top: 5vh;
+    justify-content: flex-start;
+  }
   h2 {
     margin-bottom: 0.5rem;
     img {
@@ -216,29 +250,52 @@ html {
     margin-top: 2rem;
   }
 }
-.E_services_content {
-  width: 70vw;
+.E_services_container {
+  overflow: hidden;
   height: 90vh;
+  width: 70vw;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+}
+.E_services_content {
   margin-left: 6vw;
-  padding-top: 20vh;
+  margin-top: 20vh;
   overflow-y: scroll;
   -ms-overflow-style: none; /* hide the scrollbar for IE and Edge */
   scrollbar-width: none; /* hide the scrollbar for Firefox */
   &::-webkit-scrollbar {
     display: none; /* hide the scrollbar */
   }
+  @media only screen and (max-width: 600px) {
+    width: 80vw;
+    height: 55vh;
+    margin-top: 10vh;
+    margin-left: 0px;
+  }
   img {
     width: 20%;
+    @media only screen and (max-width: 600px) {
+      width: 50vw;
+      margin: 1rem auto;
+    }
   }
 }
 .E_services {
   margin-top: 10px;
   display: grid;
-  gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1em;
   grid-auto-flow: row;
-
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .Card {
     display: flex;
     align-items: center;
@@ -250,6 +307,9 @@ html {
     gap: 15px;
     cursor: pointer;
     transition: all 0.6s;
+    @media only screen and (max-width: 600px) {
+      aspect-ratio: 6/4;
+    }
     &:hover {
       background: white;
       p {
@@ -279,16 +339,27 @@ html {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 85vh;
+
   img {
     width: 50%;
     position: absolute;
     top: 7vh;
     transform: rotate(25deg);
+    @media only screen and (max-width: 600px) {
+      position: absolute;
+      position: relative;
+      top: 3vh;
+      width: 90vw;
+      left: -5vw;
+    }
   }
   .text {
     top: -5vh;
     z-index: 1;
     position: relative;
+    @media only screen and (max-width: 600px) {
+      top: -15vh;
+    }
     h3 {
       font-size: 2.5rem;
       font-style: normal;
@@ -304,15 +375,18 @@ html {
 
 .News {
   padding-top: 25vh;
+  @media only screen and (max-width: 600px) {
+    padding-top: 10vh;
+  }
   .NewsSwiper {
     height: 60vh;
     width: 75vw;
     margin: auto 0px;
     transform: translateX(-10vw);
-
-    @media only screen and (min-width: 2560px) {
-      height: 50vh;
-      width: 85vw;
+    @media only screen and (max-width: 600px) {
+      /* Your CSS rules here */
+      transform: translateX(-45%);
+      width: 160%;
     }
 
     .slide {
@@ -344,6 +418,9 @@ html {
         font-size: 1.5rem;
         filter: grayscale(1) brightness(2);
       }
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
     }
     .swiper-button-prev {
       right: auto;
@@ -365,6 +442,13 @@ html {
   margin: 0vw 5vw;
   padding-top: 20vh;
   gap: 1rem;
+  @media only screen and (max-width: 600px) {
+    margin: 0 auto;
+    width: 100vw;
+    padding-top: 10vh;
+    gap: 10px;
+    height: auto;
+  }
   .img {
     // border: 1px solid red;
     padding: 1rem;
@@ -373,8 +457,18 @@ html {
     width: 16%;
     height: 15vh;
     justify-content: center;
+    @media only screen and (max-width: 600px) {
+      height: 9vh;
+      width: 25%;
+      padding: 0.5rem;
+    }
     img {
       height: 100%;
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
+      }
     }
   }
 }
@@ -446,7 +540,13 @@ html {
 .footerDiv {
   padding: 0px 6vw;
 }
-
+.loginPage {
+  .navIcon {
+    @media only screen and (max-width: 600px) {
+      filter: brightness(0.5);
+    }
+  }
+}
 .loginPage {
   .E_services,
   .footerDiv {
@@ -477,7 +577,11 @@ html {
       text-align: center;
       padding: 2.75rem 2rem;
       width: 30vw;
-      height: 80vh;
+      height: 70vh;
+      @media only screen and (max-width: 600px) {
+        width: 90vw;
+        height: 60vh;
+      }
       img {
         width: 30%;
       }
@@ -539,5 +643,50 @@ html {
         }
       }
     }
+  }
+}
+.footerDiv {
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
+.mobileNav {
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+
+  position: fixed;
+
+  top: 0px;
+  z-index: 999999;
+  height: 95vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    color: #0a272e;
+  }
+  .mainItems {
+    height: 70vh;
+  }
+}
+.navIcon {
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+  width: 100%;
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  img {
+    width: 5vw;
+  }
+}
+.MobileEbharLogo {
+  @media only screen and (min-width: 600px) {
+    display: none;
   }
 }

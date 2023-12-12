@@ -41,13 +41,23 @@ function News() {
           navigation={true}
           modules={[Navigation]}
           className="NewsSwiper"
-          slidesPerView={3}
+          slidesPerView={2}
           spaceBetween={40}
           pagination={{
             clickable: true,
           }}
           ref={sliderRef}
           dir="rtl"
+          breakpoints={{
+            // when window width is >= 640px
+
+            10: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+          }}
         >
           {SlidesContent.map((item, index) => (
             <SwiperSlide key={index}>
